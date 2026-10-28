@@ -1,0 +1,14 @@
+/// @file
+/// @brief Build-toolchain defaults used by the embedded compiler.
+#pragma once
+/// @brief Internal configured runtime defaults, independent of client libraries.
+namespace crepl::config {
+inline constexpr const char* version = "@PROJECT_VERSION@"; ///< Release version.
+inline constexpr const char* resource_dir = "@CREPL_RESOURCE_DIR@"; ///< Clang builtin headers.
+inline constexpr const char* cpp_includes[] = {
+@CREPL_CPP_INCLUDES@ nullptr}; ///< C++ toolchain system header directories.
+inline constexpr const char* c_includes[] = {
+@CREPL_C_INCLUDES@ nullptr}; ///< C toolchain system header directories.
+inline constexpr const char* library_dirs[] = {
+@CREPL_LIBRARY_DIRS@ nullptr}; ///< Toolchain library search directories.
+}
